@@ -1,5 +1,6 @@
 package cl.darkdragonzerox.superheroes.data
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -7,12 +8,12 @@ import androidx.room.PrimaryKey
 data class SuperHero(@PrimaryKey val id: Int,
                      val name:String,
                      val slug:String,
-                     val powerstats:PowerStats,
-                     val appearance :Appearance,
-                     val biography: Biography,
-                     val connections: Connections,
-                     val work:Work,
-                     val images:Images
+                     @Embedded  val powerstats:PowerStats,
+                     @Embedded  val appearance :Appearance,
+                     @Embedded val biography: Biography,
+                     @Embedded val connections: Connections,
+                     @Embedded val work:Work,
+                     @Embedded  val images:Images
 
                     )
 data class PowerStats(val intelligence:Int,
