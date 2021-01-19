@@ -1,6 +1,10 @@
 package cl.darkdragonzerox.superheroes.data
 
-data class SuperHero(val id: Int,
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "superhero")
+data class SuperHero(@PrimaryKey val id: Int,
                      val name:String,
                      val slug:String,
                      val powerstats:PowerStats,
