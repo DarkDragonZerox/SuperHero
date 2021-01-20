@@ -1,32 +1,44 @@
 package cl.darkdragonzerox.superheroes.view
 
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import cl.darkdragonzerox.superheroes.data.SuperHero
+import cl.darkdragonzerox.superheroes.databinding.ItemListBinding
+import coil.load
 
 class HeroAdapter : RecyclerView.Adapter<HeroVH>() {
-    privare var hero = listOf<SuperHero>()
+    privare var heros = listOf<SuperHero>()
     private val selectedHero= MutableLiveData<SuperHero>()
     fun selectedHero():LiveData<SuperHero> = selectedHero
     fun updateHero(heroList :List<SuperHero>){
-        hero=heroList
+        heros=heroList
         notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeroVH {
-        return HeroVH()
+        return HeroVH(ItemListBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
     override fun onBindViewHolder(holder: HeroVH, position: Int) {
-        TODO("Not yet implemented")
+     val hero= heros[position]
+     holder.bind(hero)
+     holder.itemView.setOnClickListener{
+         selectedHero.value=hero
+     }
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount() = heros.size
 }
 
-class HeroVH {
+class HeroVH(val binding: ItemListBinding): RecyclerView.ViewHolder(binding.root) {
+    fun bind(superHero: SuperHero){
+        binding.tvName.text = superHero.name
+        binding.tvFullname.text=superHero.biography.fullName
+        binding.tvAlignment.text=superHero.biography.alignment
+        binding.tvPublisher.text=superHero.biography.publisher
+        binding.ivHero.load(superHero.images.lg)
+    }
 
 }
