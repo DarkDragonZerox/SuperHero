@@ -10,7 +10,7 @@ import cl.darkdragonzerox.superheroes.databinding.ItemListBinding
 import coil.load
 
 class HeroAdapter : RecyclerView.Adapter<HeroVH>() {
-    privare var heros = listOf<SuperHero>()
+    private var heros = listOf<SuperHero>()
     private val selectedHero= MutableLiveData<SuperHero>()
     fun selectedHero():LiveData<SuperHero> = selectedHero
     fun updateHero(heroList :List<SuperHero>){
