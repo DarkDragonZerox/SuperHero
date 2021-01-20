@@ -66,4 +66,208 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRealName" />
 
+    <TextView
+        android:id="@+id/tvInt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="INT"
+        app:layout_constraintStart_toEndOf="@+id/tvPowerStats"
+        app:layout_constraintTop_toBottomOf="@+id/tvRealNameDetail" />
+    <TextView
+        android:id="@+id/tvStr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="STR"
+        app:layout_constraintStart_toEndOf="@+id/tvPowerStats"
+        app:layout_constraintTop_toBottomOf="@+id/tvInt" />
+
+    <TextView
+        android:id="@+id/tvSpd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="SPD"
+        app:layout_constraintStart_toEndOf="@+id/tvPowerStats"
+        app:layout_constraintTop_toBottomOf="@+id/tvStr" />
+    <TextView
+        android:id="@+id/tvDur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="DUR"
+        app:layout_constraintStart_toEndOf="@+id/tvPowerStats"
+        app:layout_constraintTop_toBottomOf="@+id/tvSpd" />
+    <TextView
+        android:id="@+id/tvPow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="POW"
+        app:layout_constraintStart_toEndOf="@+id/tvPowerStats"
+        app:layout_constraintTop_toBottomOf="@+id/tvDur" />
+    <TextView
+        android:id="@+id/tvCmb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="CMB"
+        app:layout_constraintStart_toEndOf="@+id/tvPowerStats"
+        app:layout_constraintTop_toBottomOf="@+id/tvPow" />
+
+    <TextView
+        android:id="@+id/tvIntDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/tvInt"
+        app:layout_constraintTop_toBottomOf="@+id/tvRealNameDetail" />
+
+    <TextView
+        android:id="@+id/tvStrDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/tvStr"
+        app:layout_constraintTop_toBottomOf="@+id/tvIntDetail" />
+
+    <TextView
+        android:id="@+id/tvSpdDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/tvSpd"
+        app:layout_constraintTop_toBottomOf="@+id/tvStrDetail" />
+
+    <TextView
+        android:id="@+id/tvDurDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/tvDur"
+        app:layout_constraintTop_toBottomOf="@+id/tvSpdDetail" />
+
+    <TextView
+        android:id="@+id/tvPowDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/tvPow"
+        app:layout_constraintTop_toBottomOf="@+id/tvDurDetail" />
+
+    <TextView
+        android:id="@+id/tvCmbDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/tvCmb"
+        app:layout_constraintTop_toBottomOf="@+id/tvPowDetail" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Apariencia:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCmb" />
+
+    <TextView
+        android:id="@+id/tvGenero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Genero"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/tvCmb" />
+
+    <TextView
+        android:id="@+id/tvGeneroDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/tvGenero"
+        app:layout_constraintTop_toBottomOf="@+id/tvCmbDetail" />
+    <TextView
+        android:id="@+id/tvRace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Raza"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/tvGenero" />
+
+    <TextView
+        android:id="@+id/tvRaceDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/tvRace"
+        app:layout_constraintTop_toBottomOf="@+id/tvGeneroDetail" />
+    <TextView
+        android:id="@+id/tvAltura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Altura"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/tvRace" />
+
+    <TextView
+        android:id="@+id/tvAlturaDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/tvAltura"
+        app:layout_constraintTop_toBottomOf="@+id/tvRaceDetail" />
+    <TextView
+        android:id="@+id/tvPesp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Peso"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/tvAltura" />
+
+    <TextView
+        android:id="@+id/tvPesoDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/tvPesp"
+        app:layout_constraintTop_toBottomOf="@+id/tvAlturaDetail" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
