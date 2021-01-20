@@ -276,7 +276,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="Lugar de Nacimiento:"
+        android:text="@string/lugar_de_nacimiento"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPeso" />
 
@@ -286,7 +286,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:text="@string/textview"
         app:layout_constraintStart_toEndOf="@+id/tvNacimiento"
         app:layout_constraintTop_toBottomOf="@+id/tvPesoDetail" />
     <TextView
@@ -295,7 +295,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="Heroe o Villano:"
+        android:text="@string/heroe_o_villano"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvNacimiento" />
 
@@ -305,7 +305,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:text="@string/textview"
         app:layout_constraintStart_toEndOf="@+id/tvAfilliacion"
         app:layout_constraintTop_toBottomOf="@+id/tvNacimientoDetail" />
 

@@ -8,10 +8,13 @@ import timber.log.Timber
 @Dao
 interface SuperHeroDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun loadHeros(countries: List<SuperHero>)
+    suspend fun loadHeros(heroes :List<SuperHero>)
 
     @Query("SELECT * FROM superhero")
     fun getSuperHero(): LiveData<List<SuperHero>>
+
+    @Query("SELECT * FROM superhero WHERE id=:idCode")
+    fun getHeroDetail(idCode: Int): LiveData<SuperHero>
 
 
 }

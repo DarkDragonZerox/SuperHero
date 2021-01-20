@@ -29,4 +29,8 @@
     <string name="textview">TextView</string>
     <string name="peso">Peso</string>
     <string name="textview">TextView</string>
+    <string name="textview">TextView</string>
+    <string name="heroe_o_villano">Heroe o Villano:</string>
+    <string name="lugar_de_nacimiento">Lugar de Nacimiento:</string>
+    <string name="textview">TextView</string>
 </resources>
