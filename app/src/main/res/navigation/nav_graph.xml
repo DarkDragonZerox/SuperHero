@@ -9,5 +9,14 @@
         android:id="@+id/listaFragment"
         android:name="cl.darkdragonzerox.superheroes.view.ListaFragment"
         android:label="fragment_lista"
-        tools:layout="@layout/fragment_lista" />
+        tools:layout="@layout/fragment_lista" >
+        <action
+            android:id="@+id/PasoAdetalle"
+            app:destination="@id/DetailFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/DetailFragment"
+        android:name="cl.darkdragonzerox.superheroes.view.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
 </navigation>

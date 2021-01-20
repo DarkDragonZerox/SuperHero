@@ -3,7 +3,7 @@ package cl.darkdragonzerox.superheroes.data
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-const val BASE_URL = "https://akabab.github.io/superhero-api/api"
+const val BASE_URL = "https://akabab.github.io/superhero-api/api/"
 class RetrofitClient {
     companion object {
         fun instance(): SuperApi {
