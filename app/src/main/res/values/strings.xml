@@ -2,4 +2,31 @@
     <string name="app_name">SuperHeroes</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nombre">Nombre:</string>
+    <string name="textview">TextView</string>
+    <string name="nombre_real">Nombre Real:</string>
+    <string name="textview">TextView</string>
+    <string name="power_stats">Power Stats:</string>
+    <string name="int">INT</string>
+    <string name="INT">INT</string>
+    <string name="str">STR</string>
+    <string name="spd">SPD</string>
+    <string name="dur">DUR</string>
+    <string name="pow">POW</string>
+    <string name="cmb">CMB</string>
+    <string name="textview">TextView</string>
+    <string name="textview">TextView</string>
+    <string name="textview">TextView</string>
+    <string name="textview">TextView</string>
+    <string name="textview">TextView</string>
+    <string name="textview">TextView</string>
+    <string name="apariencia">Apariencia:</string>
+    <string name="genero">Genero</string>
+    <string name="textview">TextView</string>
+    <string name="raza">Raza</string>
+    <string name="textview">TextView</string>
+    <string name="altura">Altura</string>
+    <string name="textview">TextView</string>
+    <string name="peso">Peso</string>
+    <string name="textview">TextView</string>
 </resources>
