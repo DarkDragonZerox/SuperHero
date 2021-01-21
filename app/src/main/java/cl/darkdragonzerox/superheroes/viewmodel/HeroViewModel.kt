@@ -12,15 +12,15 @@ class HeroViewModel : ViewModel() {
     val herolist =repository.superList
 
     init {
-        viewModelScope.launch { repository.getSuperHeroes() }
+        viewModelScope.launch { repository.getSuperHeroesFromApi() }
     }
     private lateinit var selectedHero : SuperHero
     fun selected(superHero: SuperHero){
         selectedHero= superHero
     }
 
-    fun getHeroDetail() : LiveData<SuperHero>
+    fun getHeroDetail(idCode: Int) : LiveData<SuperHero>
     {
-       return repository.getHero(selectedHero.id)
+       return repository.getHero(idCode)
     }
 }

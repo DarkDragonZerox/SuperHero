@@ -4,35 +4,51 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.viewModels
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import cl.darkdragonzerox.superheroes.R
 import cl.darkdragonzerox.superheroes.databinding.FragmentListaBinding
 import cl.darkdragonzerox.superheroes.viewmodel.HeroViewModel
 
-class ListaFragment : Fragment(){
+class ListaFragment : Fragment(), OnItemClickListener {
     private val viewModel :HeroViewModel by activityViewModels()
     private lateinit var binding: FragmentListaBinding
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater,
+                              container: ViewGroup?,
+                              savedInstanceState: Bundle?):View? {
         binding = FragmentListaBinding.inflate(layoutInflater)
-        val adapter= HeroAdapter()
-        binding.rvHero.layoutManager=LinearLayoutManager(context)
+        val adapter= HeroAdapter(this)
         binding.rvHero.adapter = adapter
+        binding.rvHero.layoutManager=LinearLayoutManager(context)
 
 
-        viewModel.herolist.observe(viewLifecycleOwner, {
-            it?.let { adapter.updateHero(it) }
+
+        viewModel.herolist.observe(viewLifecycleOwner, {heroList->heroList?.let {
+            adapter.updateHero(it )
+        }
+
         })
-        adapter.selectedHero().observe(viewLifecycleOwner,{
-            viewModel.selected(it)
-            findNavController().navigate(R.id.PasoAdetalle)
-        })
+
 
         return binding.root
     }
 
-}
+    override fun onClick(id: Int) {
+        activity?.supportFragmentManager?.
+        beginTransaction()?.
+        replace(R.id.main_container,DetailFragment(id))?.
+        addToBackStack("back")?.
+        commit()
+
+    }
+
+
+    }
+
+

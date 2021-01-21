@@ -1,35 +1,34 @@
 package cl.darkdragonzerox.superheroes.data
 
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 
 
-class Repository{
 
-    private val superHeroDao=SuperHeroApplication.superHeroDatabase!!.superHeroDao()
-    val superList= superHeroDao.getSuperHero()
+class Repository {
 
-    suspend fun getSuperHeroes(){
+    private val superDatabase = SuperHeroApplication.superHeroDatabase!!
+    val superList = superDatabase.superHeroDao().getSuperHero()
 
-        val response=RetrofitClient.instance().getSuperHeroFromApi()
+    suspend fun getSuperHeroesFromApi() {
 
-        when(response.isSuccessful){
+        val response = RetrofitClient.retrofitCliente().getSuperHero()
 
-            true -> { response.body()?.let{
-                Log.d("esta wea","${it.size}" )
-                superHeroDao.loadHeros(it)
-            }}
+        when (response.isSuccessful) {
 
-            false-> {
+            true -> {
+                response.body()?.let {
 
-
+                    superDatabase.superHeroDao().loadAllHeros(it)
+                }
             }
+
+            false -> {}
         }
 
     }
-    fun getHero(idCode:Int  ) : LiveData<SuperHero>
-    {
-        return superHeroDao.getHeroDetail(idCode)
+
+    fun getHero(idCode: Int): LiveData<SuperHero> {
+        return superDatabase.superHeroDao().getHeroDetail(idCode)
     }
 }

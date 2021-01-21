@@ -9,24 +9,30 @@ import cl.darkdragonzerox.superheroes.data.SuperHero
 import cl.darkdragonzerox.superheroes.databinding.ItemListBinding
 import coil.load
 
-class HeroAdapter : RecyclerView.Adapter<HeroVH>() {
-    private var listaHero = listOf<SuperHero>()
-    private val selectedHero= MutableLiveData<SuperHero>()
-    fun selectedHero():LiveData<SuperHero> = selectedHero
+class HeroAdapter(val listener:OnItemClickListener) : RecyclerView.Adapter<HeroVH>() {
+    private val listaHero = mutableListOf<SuperHero>()
+
+
+
+
     fun updateHero(heroList :List<SuperHero>){
-        listaHero=heroList
+        listaHero.clear()
+        listaHero.addAll(heroList)
         notifyDataSetChanged()
+
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeroVH {
-        return HeroVH(ItemListBinding.inflate(LayoutInflater.from(parent.context)))
+     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeroVH {
+        val binding=(ItemListBinding.inflate(LayoutInflater.from(parent.context)))
+         return HeroVH(binding)
     }
 
     override fun onBindViewHolder(holder: HeroVH, position: Int) {
      val hero= listaHero[position]
-     holder.bind(hero)
+
      holder.itemView.setOnClickListener{
-         selectedHero.value=hero
+         listener.onClick(hero.id)
      }
+        holder.bind(hero)
     }
 
     override fun getItemCount() = listaHero.size
