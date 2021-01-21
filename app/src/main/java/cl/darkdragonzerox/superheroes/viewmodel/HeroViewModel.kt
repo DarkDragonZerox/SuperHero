@@ -14,9 +14,10 @@ class HeroViewModel : ViewModel() {
     init {
         viewModelScope.launch { repository.getSuperHeroesFromApi() }
     }
-    private lateinit var selectedHero : SuperHero
-    fun selected(superHero: SuperHero){
-        selectedHero= superHero
+    fun getSuperHerovm(): LiveData<List<SuperHero>>{
+
+        return repository.loadHero()
+
     }
 
     fun getHeroDetail(idCode: Int) : LiveData<SuperHero>

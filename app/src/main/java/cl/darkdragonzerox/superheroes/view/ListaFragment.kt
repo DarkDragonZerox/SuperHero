@@ -1,41 +1,46 @@
 package cl.darkdragonzerox.superheroes.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-
 import androidx.recyclerview.widget.LinearLayoutManager
+
+
 import cl.darkdragonzerox.superheroes.R
 import cl.darkdragonzerox.superheroes.databinding.FragmentListaBinding
 import cl.darkdragonzerox.superheroes.viewmodel.HeroViewModel
 
 class ListaFragment : Fragment(), OnItemClickListener {
-    private val viewModel :HeroViewModel by activityViewModels()
     private lateinit var binding: FragmentListaBinding
+    private val viewModel :HeroViewModel by viewModels()
 
 
-    override fun onCreateView(inflater: LayoutInflater,
-                              container: ViewGroup?,
-                              savedInstanceState: Bundle?):View? {
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+
         binding = FragmentListaBinding.inflate(layoutInflater)
         val adapter= HeroAdapter(this)
-        binding.rvHero.adapter = adapter
-        binding.rvHero.layoutManager=LinearLayoutManager(context)
+        val recycler=binding.rvHero
+        recycler.adapter=adapter
+        recycler.layoutManager=LinearLayoutManager(context)
 
+        viewModel.herolist.observe(viewLifecycleOwner, {herolist->herolist?.let {
+           adapter.updateHero(it)
 
-
-        viewModel.herolist.observe(viewLifecycleOwner, {heroList->heroList?.let {
-            adapter.updateHero(it )
+            Log.d("listener","listener ${it.size}")
         }
 
         })
 
-
+        Log.d("oncreate ", "prueba on create")
         return binding.root
     }
 

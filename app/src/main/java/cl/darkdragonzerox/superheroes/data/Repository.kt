@@ -31,4 +31,7 @@ class Repository {
     fun getHero(idCode: Int): LiveData<SuperHero> {
         return superDatabase.superHeroDao().getHeroDetail(idCode)
     }
+    fun loadHero(): LiveData<List<SuperHero>> {
+        return superDatabase.superHeroDao().getSuperHero()
+    }
 }

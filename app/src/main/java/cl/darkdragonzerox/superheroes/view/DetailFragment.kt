@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import cl.darkdragonzerox.superheroes.databinding.FragmentDetailBinding
 import cl.darkdragonzerox.superheroes.databinding.FragmentListaBinding
 import cl.darkdragonzerox.superheroes.viewmodel.HeroViewModel
@@ -14,7 +15,7 @@ import coil.load
 
 class DetailFragment(id:Int) : Fragment(){
     lateinit var binding: FragmentDetailBinding
-    private val viewModel : HeroViewModel by activityViewModels()
+    private val viewModel : HeroViewModel by viewModels()
     private val idcode=id
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding= FragmentDetailBinding.inflate(layoutInflater)
